@@ -1,0 +1,7 @@
+The purpose of <SafeAreaView> is to render content within the safe area boundaries of a device. 
+It applies padding to reflect the physical limitations of the screen such as rounded corners or camera notches.
+This is mostly for ios devices with notches at the top of the screen.
+
+We can specify styles and other codes for android and ios devices separately by using the '.android' and '.ios' extensions
+to name our .js files. Then, when we import this file into our App component, we do not specify he extension. React native
+automatically renders the styles for the different platforms based on the file extension name

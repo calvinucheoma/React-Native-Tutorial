@@ -1,0 +1,27 @@
+When combining styles in an array, the styles for the last array object takes precedent.
+
+In React native, all dimensions are unit-less and represent density independent pixels. 
+
+You can however specify percentage values.
+
+'borderRadius' styles only applies to android devices and not ios when used in the <Text> component. 
+
+It is applied across both platforms when used in the <View> component.
+
+To specify a boxShadow style in React native, we use a group of 4 properties.
+
+There are no common styles to apply shadows in both Ios and Android. The above 4 groups of box shadow styles only
+apply to Ios devices. i.e shadowColor, shadowOffset, shadowOpacity, shadowRadius.
+
+To add boxShadow to android, we use the 'elevation' property, which internally utilizes the android 'Elevation' API.
+
+'shadowColor' is the only property that works on both ios and android.
+
+There are however external packages that support cross-platform shadows.
+
+Child elements do not inherit styles of parent elements so setting the font color to white in the <View> container 
+would not change the text color to white.
+
+React native still supports style inheritance within <Text> subtrees so the styles are inherited. So a nested <Text>
+component within a <Text> component will inherit the styles.
+

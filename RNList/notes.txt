@@ -1,0 +1,39 @@
+In React native, the recommended approach for rendering lists is to use the <FlatList> component, which renders only
+the items currently in view, making it highly performant for long lists. It however renders other items not displayed
+in the viewport to enhance smooth scrolling, and lazily loads the rest of the items as you scroll further down.
+
+It has two mandatory props. The 'data' prop is used to pass in the array of items that you want to render in the list.
+The second mandatory prop is the 'renderItem' props which is a function that returns the JSX for rendering each item in the list.
+The function receives an object containing the current item and you can define how each item should be rendered.
+
+To render the list horizontally, we add the 'horizontal' prop and set it to true.
+
+The 'keyExtractor' prop takes an item from the data array and returns a unique key for that item.
+It is used to identify the unique items in the list, similar to the 'key' prop when using the 'map' array method.
+By default, it returns 'item.key' and if that is not present, it returns 'item.id'. If that as well is not present, 
+it uses the item index as the key. The function returns a string.
+
+The 'ItemSeparatorComponent' prop accepts a React component, rendering it between each item in the list, but excludes
+the top and the bottom.
+
+The 'ListEmptyComponent' prop accepts a React component and renders it when the list is empty.
+
+The 'ListHeaderComponent' and the 'ListFooterComponent' allows you to add a custom header and footer to your list.
+
+The <SectionList> component is a performant component designed for rendering sectioned lists.
+It is crucial to name the property containing your data in your array 'data' as that is what the <SectionList> component
+expects. If your API data-set does not have the 'data' property, you would have to transform your data. The other property
+can be named anything. This component has two mandatory props, 'sections' which is the source of information for the
+SectionList and 'renderItem' which is a function that returns the JSX for rendering each item in the list. It receives
+an object containing the current item and you can define how each item should be rendered.
+The destructured 'item' from the 'renderItem' function refers to each element in the 'data' array in our list, and hence
+the property being called 'data' is vital.
+
+The 'renderSectionHeader' prop is a function that returns the JSX for rendering each section header in the list.
+It receives an object containing the current section. You can define how each section header should be rendered.
+The destructured 'section' from the 'renderSectionHeader' function refers to each entire object from our list array.
+
+The <SectionList> component also returns some similar props as <FlatList> component such as the 'ItemSeparatorComponent',
+but for this prop, we define a function and return the JSX from the function instead. The 'SectionSeparatorComponent'
+prop behaves in the same way but separates the sections instead.
+

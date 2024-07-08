@@ -1,0 +1,46 @@
+In React Native, the <View> container is automatically set to a flex display by default.
+
+Flex container, by default, only takes up the space required by its children.
+
+There are 4 values for 'flexDirection' property, with the default being 'column'. The rest include:
+'column-reverse', 'row', and 'row-reverse'.
+
+By default, 'justifyContent' property is set to the value 'flex-start'. Other values include:
+'flex-end', 'center', 'space-around', 'space-between' and 'space-evenly'.
+
+By default, the value of 'alignItems' is set to 'stretch'. This means the flex-items will stretch the entire
+length of the cross-axis, which typically flows from left to right. The alignment always takes place on the cross-axis
+
+'alignSelf' is applied to individual items allowing us to control the alignment of each items independently.
+
+The default value for 'alignSelf' is 'auto' and it inherits its value from the alignItems property of the parent flex container.
+
+If we want out flex-items to wrap within the parent container they are housed in, we set the property 'flexWrap' to 'wrap'.
+This is very handful when our parent container has a defined height  and we do not want the children flex-items to overflow
+from the container.
+
+The 'alignContent' property aligns lines of content across the cross axis and distributes any extra spacing in the parent container.
+
+The 'flexBasis' property determines the initial size of a flex item before any extra space in the container is distributed..
+It is an alternative to using the height and width properties in flex layouts.
+'flexBasis' sets the initial width of an item if the parent container flex direction is 'row' instead of 'column'
+We see the difference between using flexBasis to set the height and using 'height' property when we set two flex-items 
+to both take up a flex value of 1 in the parent container. We see that the flex-item that defines a flexBasis property
+would take up more space than the item that defined a 'height' property, even though both values were the same.
+
+The 'flexShrink' property dictates how flex-items behave when their default size is larger than the flex container.
+By default, the value of flexShrink is 0 on every flex-item, which causes the item to overflow the container when the 
+container is defined with a specified width. However, setting a positive value for flexShrink will make the item shrink
+when necessary, and the amount of shrinkage will be relative to other items in the container.
+
+The 'flexGrow' property determines the amount of available space inside the container that an item should take up,
+as by default, an item only takes up the space required to fit its contents. It is relative to other items in the container.
+The default value of 0 signifies that the items should not grow. When we set flexGrow to 1 for all flex-items, they will
+grow evenly whenever there is additional space in the container.
+
+'relative' position is the default position for components in react native.
+
+
+
+
+

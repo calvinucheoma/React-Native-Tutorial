@@ -1,0 +1,58 @@
+React Navigation provides a variety of navigators like Stack, Drawer, and Tab navigators.
+
+Stack Navigator provides a way for your app to transition between screens where each new screen is placed on top of a stack.
+
+Drawer Navigator renders a navigation drawer on the side of the screen which can be opened and closed via gestures.
+
+A tab navigator at the bottom of your screen lets you easily switch between different routes.
+
+The command for installing the react navigation package is: 'npm install @react-navigation/native'.
+We also install two other dependencies using the command: 'npx expo install react-native-screens react-native-safe-area-context'.
+
+React Navigation library offers two navigators for Stack Navigation: Stack Navigator and Native Stack Navigator.
+
+The Stack Navigator is a Javascript-based navigator which offers a high degree of customization, making it a great choice for apps that require
+a unique navigation experience. However, this comes at the cost of performance, especially when compared to its counterpart, the Native Stack Navigator.
+
+The Native Stack Navigator leverages the native navigation constructs of iOS and Android, providing better performance and a more native feel
+to the transitions and gestures. The caveat here is that it might not offer the same level of customization as the Stack Navigator.
+We install the Native Stack Navigator by running the command: 'npm install @react-navigation/native-stack'
+
+We have two primary ways of navigating between screens. Using the 'navigation' prop and the 'useNavigation' hook.
+We destructure the 'navigation' prop from the component we are passing to our Stack.Screen element.
+
+We can pass data between screens by specifying a second argument, which is an object, to the 'navigation.navigate' function,
+and adding the data we want to pass there. Then, in the screen we are passing it to, we destructure a 'route' prop from the component.
+This 'route' prop is provided to all screen components. We can also update the parameters from the given screen using the
+'navigation' prop. You can also send data back to the previous screen in the same way. 
+
+By default, the 'name' prop on the Screen component is showcased as the screen title. However, this can be 
+customized by specifying a title option using the 'options' prop. 'headerLeft' and 'headerRight' properties inside
+the 'options' object prop allows for adding custom components to the left and right of the header. We use the 
+'contentStyle' option to style the contents of our screen.
+
+'screenOptions' prop on the <Stack.Navigator> component applies the styling added in it to all the screens.
+
+Drawer Navigator introduces a hidden menu, sliding from either side of the screen. It is particularly beneficial
+in apps with multiple main sections that require a neat and organized navigation structure.
+We install the Drawer Navigator package by running the command: 'npm install @react-navigation/drawer'.
+We also install the following packages: 'npm install react-native-gesture-handler react-native-reanimated'.
+Then in our App.js file, we have to make sure that we add the following line of code at the top of the file and make
+sure that there is nothing else before it: "import 'react-native-gesture-handler';".
+Then, we have to add the babel plugin to our babel.config.js file. We can paste this there: plugins: ["react-native-reanimated/plugin"],
+Then, we clear the cache before starting our app by running this command: npx expo start -c or by simply adding
+the '-c' option to our 'start' script in our package.json file. i.e "start": "expo start -c",
+We can toggle the drawer programmatically. We destructure 'navigation' from our screen component and then we can
+use it in a button like this: <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()}/>
+We can also use the 'jumpTo' method on 'navigation' prop to navigate programmatically  without the DrawerUI
+
+Tab Navigation offers a way to switch between different screens by tapping on a tab, which is usually displayed
+at the bottom of the screen. We install the library by running the command: 'npm install @react-navigation/bottom-tabs'
+By default, 'tabBarLabelPosition' is set to 'below-icon' but we can change it to 'beside-icon'. 'beside-icon' is typically set for ipad and tablet devices.
+'tabBarBadge' option is used to display a notification-like badge just above our tab icon
+
+Nesting navigators allows us to combine the powers of different types of navigators, creating a seamless and organized user interface.
+
+
+
+

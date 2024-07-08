@@ -1,0 +1,26 @@
+If we want a keyboard to appear on our ios devices, we need to press 'Cmd+Shift+K' on our IoS virtual device.
+
+'onChangeText' prop would automatically update the state variable when we start typing the text in the Input box.
+So we simply pass in the useState set function inside it. E.g onChangeText={setName}
+
+Enabling the 'secureTextEntry' prop on the <TextInput> component masks the input characters, making them appear as asterisks
+or dots. This ensures that users inputs remain hidden when dealing with sensitive inputs like passwords.
+
+'keyboardType' prop allows you to specify the type of the keyboard that appears when the user interacts with the Text Input.
+For example, we can set this field to 'numeric' to restrict the user to entering only numeric values from the keyboard.
+
+'multiline' prop defines our TextInput as a text area component. This prop aligns the text-input to the top on ios devices,
+but center on android devices. To address this, we specify 'textAlignVertical' in our styles and set it to 'top'
+
+The <Switch> component serves as a valuable tool for integrating toggles into your app's user interface.
+
+The <KeyboardAvoidingView> component is used to prevent the keyboard on ios devices from overshadowing or displaying over
+text inputs on our screen. We add a prop called 'behavior' and set it to 'padding'. This ensures that the component increases
+its padding at the button, matching the keyboard's height. Setting the 'keyboardVerticalOffset' prop to 100 prevents the 
+keyboard from covering the form again when the form height is big.
+
+
+
+
+
+

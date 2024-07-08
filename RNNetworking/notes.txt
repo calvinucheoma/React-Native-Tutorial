@@ -1,0 +1,5 @@
+'refreshing' and 'onRefresh' props on the <FlatList> component automatically render a default loading spinner when the
+list is pulled down. They work when the user pulls down the page on his page screen.
+
+localhost URLs do not work from the Android Emulator. You can make API requests to your local API endpoints from ios devices,
+but from android devices, you need workarounds like using your computer's IP address instead of localhost.

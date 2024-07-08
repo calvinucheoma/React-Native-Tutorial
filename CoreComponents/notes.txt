@@ -1,0 +1,17 @@
+A <View> component only takes up the space offered by its children.
+To make the <View> component to take up the entire space, we have to give it a 'flex:1' style property.
+In React Native, all text nodes must be wrapped inside a <Text> component.
+The <Button> component in React Native is a self-closing tag.
+We wrap <Pressable> component around elements to detect press interaction.
+We can create a custom button using the <Pressable> component.
+It has some other props like 'onPressIn' which is called when a press is activated.
+'onLongPress' which is triggered when a press is held for longer than 500 milliseconds.
+'onPressOut' is called when the press gesture is deactivated.
+For <Modal> components, the 'onRequestClose' handler prop is triggered when the user presses the 'back' button 
+on android or dismisses the modal with a gesture on ios.
+'presentationStyle' prop only affects ios and not android.
+The 'backgroundColor' prop on the <StatusBar/> component works for only android devices.
+'barStyle="default"' corresponds to white text on android and black text on ios.
+'hidden' prop hides the StatusBar
+<ActivityIndicator> component displays a circular loading indicator. The 'animating' prop hides this component when set to false
+React Native does not use css for styling, but rather it uses Javascript
